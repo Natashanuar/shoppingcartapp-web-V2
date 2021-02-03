@@ -63,7 +63,8 @@ pipeline {
             steps {
            sshagent(['tomcat']) {
 //sh 'cp target/*.war /home/tas/prod/apache-tomcat-9.0.41/webapps/webapp.war'
-          sh 'scp -o StrictHostKeyChecking=no target/*.war natasha_1998@34.122.205.85:/var/lib/tomcat8/webapps/shopieasy.war'
+              sh 'scp -o StrictHostKeyChecking=no target/*.war natasha_1998@130.211.221.9:/var/lib/tomcat8/webapps/webapp.war'
+         // sh 'scp -o StrictHostKeyChecking=no target/*.war natasha_1998@34.122.205.85:/var/lib/tomcat8/webapps/shopieasy.war'
             // sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@34.122.205.85:webapps'
               }      
            }       
@@ -73,7 +74,7 @@ pipeline {
    stage ('DAST') {
       steps {
         echo 'DAST'
-         // sh 'ssh -o  StrictHostKeyChecking=no ubuntu@35.193.155.239 "docker run -t owasp/zap2docker-stable zap-baseline.py -t http://35.225.146.167:8080/shoppingcartapp-web-V2/" || true'
+        //sh 'ssh -o  StrictHostKeyChecking=no natasha_1998@130.211.221.9 "docker run -t owasp/zap2docker-stable zap-baseline.py -t http://35.225.146.167:8080/shoppingcartapp-web-V2/" || true'
         }
       }
     
