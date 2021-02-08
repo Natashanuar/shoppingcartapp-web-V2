@@ -59,7 +59,7 @@ pipeline {
     }
    
     
-   stage ('Deploy-To-Tomcat') {
+ /*  stage ('Deploy-To-Tomcat') {
             steps {
            sshagent(['tomcat']) {
 //sh 'cp target/*.war /home/tas/prod/apache-tomcat-9.0.41/webapps/webapp.war'
@@ -76,7 +76,7 @@ pipeline {
         echo 'DAST'
         //sh 'ssh -o  StrictHostKeyChecking=no natasha_1998@130.211.221.9 "docker run -t owasp/zap2docker-stable zap-baseline.py -t http://35.225.146.167:8080/shoppingcartapp-web-V2/" || true'
         }
-      }
+      }*/
     
   }
 }
