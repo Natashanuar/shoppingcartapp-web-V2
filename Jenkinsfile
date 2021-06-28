@@ -43,32 +43,22 @@ pipeline {
         }*/
    
     
-    /*stage ('Build') {
+    stage ('Build') {
       steps {
       sh 'mvn clean package'
        }
-    }*/
+    }
    
-stage ('SAST') {
-      steps { 
-        withSonarQubeEnv('SonarQubeServer') { 
-    def sonarRunner = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-    sh """
-       ${sonarRunner}/bin/sonar-scanner \
-       -Dsonar.projectKey=your_project_key \
-       -Dsonar.sources=.
-    """
-}
-      }}
+
     
-   /* stage ('SAST') {
+    stage ('SAST') {
       steps {
         withSonarQubeEnv('sonar') {
           sh 'mvn sonar:sonar'
           sh 'cat target/sonar/report-task.txt'
         }
       }
-    }*/
+    }
    
     
  /* stage ('Deploy-To-Tomcat') {
