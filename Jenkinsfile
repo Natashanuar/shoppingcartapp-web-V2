@@ -43,20 +43,20 @@ pipeline {
         }*/
    
     
-    stage ('Build') {
+    /*stage ('Build') {
       steps {
       sh 'mvn clean package'
        }
-    }
+    }*/
     
-    /*stage ('SAST') {
+    stage ('SAST') {
       steps {
         withSonarQubeEnv('sonar') {
           sh 'mvn sonar:sonar'
           sh 'cat target/sonar/report-task.txt'
         }
       }
-    }*/
+    }
    
     
  /* stage ('Deploy-To-Tomcat') {
