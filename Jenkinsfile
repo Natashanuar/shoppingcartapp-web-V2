@@ -38,7 +38,7 @@ pipeline {
                     --prettyPrint''', odcInstallation: 'dependencycheck'
                 dependencyCheckPublisher pattern: 'dependency-check-report.xml'
             }
-        }*/
+        }
     
     
     
@@ -76,7 +76,7 @@ pipeline {
         //echo 'DAST'
         sh 'ssh -o  StrictHostKeyChecking=no natasha_1998@130.211.221.9 "docker run -t owasp/zap2docker-stable zap-baseline.py -t http://35.225.146.167:8080/shoppingcartapp-web-V2/" || true'
         }
-      }
+      }*/
     
   }
 }
