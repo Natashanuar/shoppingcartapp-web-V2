@@ -49,7 +49,9 @@ pipeline {
        }
     }*/
    
-    withSonarQubeEnv('SonarQubeServer') { 
+stage ('SAST') {
+      steps { 
+        withSonarQubeEnv('SonarQubeServer') { 
     def sonarRunner = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
     sh """
        ${sonarRunner}/bin/sonar-scanner \
@@ -57,6 +59,7 @@ pipeline {
        -Dsonar.sources=.
     """
 }
+      }}
     
    /* stage ('SAST') {
       steps {
