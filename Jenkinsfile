@@ -29,7 +29,7 @@ pipeline {
          sh './dependency-check/bin/dependency-check.sh --scan ./* --enableRetired -f "ALL" '
       }
  }
-       /*stage ('Software Composition Analysis') {
+       stage ('Software Composition Analysis') {
             steps {
                 dependencyCheck additionalArguments: ''' 
                     -o "./" 
@@ -59,7 +59,7 @@ pipeline {
     }
    
     
-  stage ('Deploy-To-Tomcat') {
+ /* stage ('Deploy-To-Tomcat') {
             steps {
            sshagent(['tomcat']) {
 //sh 'cp target/*.war /home/tas/prod/apache-tomcat-9.0.41/webapps/webapp.war'
