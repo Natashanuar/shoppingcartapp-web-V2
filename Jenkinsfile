@@ -3,7 +3,9 @@ pipeline {
   tools {
     maven 'Maven'
   }
+  
   stages {
+    
     stage ('Initialize') {
       steps {
         sh '''
@@ -29,7 +31,7 @@ pipeline {
          sh './dependency-check/bin/dependency-check.sh --scan ./* --enableRetired -f "ALL" '
       }
  }
-       stage ('Software Composition Analysis') {
+      /* stage ('Software Composition Analysis') {
             steps {
                 dependencyCheck additionalArguments: ''' 
                     -o "./" 
@@ -38,10 +40,8 @@ pipeline {
                     --prettyPrint''', odcInstallation: 'dependencycheck'
                 dependencyCheckPublisher pattern: 'dependency-check-report.xml'
             }
-        }
-    
-    
-    
+        }*/
+   
     
     stage ('Build') {
       steps {
