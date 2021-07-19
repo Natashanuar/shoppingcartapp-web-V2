@@ -15,7 +15,7 @@ pipeline {
       }
     }
     
- /*  stage ('Check-Git-Secrets'){
+   stage ('Check-Git-Secrets'){
         steps{
         sh 'rm trufflehog || true'
         sh 'docker run -t gesellix/trufflehog --json https://github.com/Natashanuar/shoppingcartapp-web-V2.git > trufflehog'
@@ -43,7 +43,7 @@ pipeline {
         }*/
    
     
-    /*stage ('Build') {
+    stage ('Build') {
       steps {
         sh'''
         echo Build'''
@@ -53,7 +53,7 @@ pipeline {
    
 
     
-    stage ('SAST') {
+   /* stage ('SAST') {
       steps {
         withSonarQubeEnv('sonar') {
           sh 'mvn sonar:sonar'
