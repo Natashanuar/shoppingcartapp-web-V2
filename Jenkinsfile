@@ -85,7 +85,7 @@ pipeline {
             // sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@34.122.205.85:webapps'
               }      
            }       
-   }
+   
     
     
    stage ('DAST') {
